@@ -9,3 +9,5 @@ class Solution:
         rlist = []
         #进行排序
         nums.sort()
+
+        for i in range(len(nums)-3)
