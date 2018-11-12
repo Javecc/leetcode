@@ -11,19 +11,26 @@ class Solution:
         end = len(nums)-1
         while fir <= end:
         	mid = (fir + end)//2
+        	#yizhongjianweijiexian
         	if nums[mid] == target:
         		return mid
         	elif nums[mid] < nums[end]:
-        		if nums[mid] < target and target < nums[end]:
+        		if nums[mid] < target and target <= nums[end]:
         			fir = mid + 1
         		else:
         			end = mid - 1
         	else:
-        		if nums[fir] < target and target < nums[mid]:
+        		if nums[fir] <= target and target < nums[mid]:
         			end = mid - 1
         		else:
         			fir = mid + 1
         return -1
 #2018.11.12
+
+if __name__ == '__main__':
+	s = Solution()
+	li = [1,3]
+	n = 3
+	print(s.search(li,n))
 
 
