@@ -5,17 +5,25 @@ class Solution:
         :type target: int
         :rtype: List[int]
         """
-        fir = 0
-        end = len(nums) - 1
-        nums.sort()
-        while fir <= end:
-        	temp = nums[fir] + nums[end]
-        	if temp == target:
-        		return [fir,end]
-        	elif temp < target:
-        		fir += 1
+        # two point need to sort
+        # fir = 0
+        # end = len(nums) - 1
+        # nums.sort()
+        # while fir <= end:
+        # 	temp = nums[fir] + nums[end]
+        # 	if temp == target:
+        # 		return [fir,end]
+        # 	elif temp < target:
+        # 		fir += 1
+        # 	else:
+        # 		end -= 1
+        mdict = {}
+        for i in range(len(nums)):
+        	if target-nums[i] in mdict:
+        		return [mdict[target-nums[i]],i]
         	else:
-        		end -= 1
+        		mdict[nums[i]] = i
+
 #2018.11.13
 
 #---------------main function----------------
