@@ -19,8 +19,15 @@
   5.O(nlogn)
   6.O(n^3)立方阶
   7.O(2^n)指数阶
-  **注意**：logn一般是log2 n
-  ![函数图](./images/01.png)
+  8.**注意**：logn一般是log2 n
+  ![函数图](./images/01.png) 
+* python内置类型性能分析
+  1.timeit模块：测试执行速度
+    * class timeit.Timer(stmt="pass",setup="pass",timer=<timer function>)
+    * Timer是测量小段代码执行速度的类
+    * stmt参数是要测试的代码语句(statment)
+    * setup参数是运行代码时需要的设置
+    * timer参数是一个定时器函数，与平台无关 p6 13min
 * 
 * 
 * 
