@@ -21,7 +21,7 @@ class Solution:
 #-------------------main function--------------------------
 if __name__ == '__main__':
 	#l = [3,2,1,0,4]
-	l = [0]
+	l = [3,2,1,0,4]
 	s = Solution()
 	print(s.canJump(l))
 
