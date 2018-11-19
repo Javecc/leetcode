@@ -24,3 +24,4 @@ if __name__ == '__main__':
 	l = [0]
 	s = Solution()
 	print(s.canJump(l))
+
