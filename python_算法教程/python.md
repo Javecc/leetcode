@@ -27,7 +27,13 @@
     * Timer是测量小段代码执行速度的类
     * stmt参数是要测试的代码语句(statment)
     * setup参数是运行代码时需要的设置
-    * timer参数是一个定时器函数，与平台无关 p6 13min
+    * timer参数是一个定时器函数，与平台无关
+  2.list内置操作的时间复杂度：
+    * sort  O(nlogn) 其为Timsort算法
+    * set slice  O(n+k)
+  3.dict内置操作的时间复杂度
+    * copy  O(n)
+    * iteration  O(n)
 * 
 * 
 * 
