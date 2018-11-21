@@ -5,14 +5,13 @@ class Solution:
         :rtype: List[List[int]]
         """
         def listAppend(row,column,x,y,case,num):
-            # if row == 0 or column == 0:
-            #   return
+            if row == 0 or column == 0:
+              return
             #从左向右移动
             if case == 0:
                 endy = y + column
                 for i in range(y,endy):
                     rlist[x][i] = num
-                    print(num)
                     num += 1
                 row -= 1
                 x += 1
@@ -52,11 +51,9 @@ class Solution:
         rlist = []
         ls = []
         for i in range(n):
-            ls.append(0)
-        for i in range(n):
-            rlist.append(ls)
-        for i in range(n):
-            print(rlist[i])
+            rlist.append([])
+            for j in range(n):
+                rlist[i].append(0)
         listAppend(n,n,0,0,0,1) 
         return rlist
 #2018.11.20
