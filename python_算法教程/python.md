@@ -34,6 +34,7 @@
   3.dict内置操作的时间复杂度
     * copy  O(n)
     * iteration  O(n)
+## 数据结构 p1 4min
 * 
 * 
 * 
