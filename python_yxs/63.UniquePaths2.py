@@ -13,6 +13,7 @@ class Solution:
             for i in range(row):
                 if obstacleGrid[i][0] == 1:
                     return 0
+        #进行0-1转换
         for i in range(row):
             for j in range(column):
                 if obstacleGrid[i][j]==0:
