@@ -13,9 +13,13 @@ class Solution:
         rlist = []
         ls = []
         for i in range(n):
-            rlist.append([])
-            for j in range(n):
-                rlist[i].append(0)
+        	ls.append(0)
+        for i in range(n):
+        	rlist.append(ls)
+        # for i in range(n):
+        #     rlist.append([])
+        #     for j in range(n):
+        #         rlist[i].append(0)
         listAppend(n,0,0,0) 
         return rlist
 if __name__ == '__main__':
