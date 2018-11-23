@@ -13,6 +13,8 @@ class Solution:
             for i in range(row):
                 if obstacleGrid[i][0] == 1:
                     return 0
+        if obstacleGrid[-1][-1] == 1:
+            return 0
         print(obstacleGrid,"first")
 
         #进行0-1转换
@@ -28,16 +30,30 @@ class Solution:
         for i in range(row-1):
             for j in range(column-1):
                 if obstacleGrid[i][j] == -1:
-                    obstacleGrid[i][j+1] = 0
-                    obstacleGrid[i+1][j] = 0
+                    if obstacleGrid[i][j+1] != -1:
+                        obstacleGrid[i][j+1] = 0
+                    if obstacleGrid[i+1][j] != -1:
+                        obstacleGrid[i+1][j] = 0
         print(obstacleGrid,"尾部置0")
+
+        # for i in range(row):
+        #     for j in range(column):
+        #         if (i == 0 or j == 0 ) and obstacleGrid[i][j] == -1:
+        #             obstacleGrid[i][j] = 0
+        # print(obstacleGrid,"行列置0")
 
         for i in range(1,row):
             for j in range(1,column):
                 if obstacleGrid[i][j] == -1:
-                    obstacleGrid[i][j] = 0
+                    continue
+                    # obstacleGrid[i][j] = 0
                 else:
-                    obstacleGrid[i][j] = obstacleGrid[i-1][j] + obstacleGrid[i][j-1]
+                    if obstacleGrid[i-1][j] == -1 and obstacleGrid[i][j-1] == -1:
+                        obstacleGrid[i][j] = 0
+                    elif obstacleGrid[i-1][j] == -1 or obstacleGrid[i][j-1] == -1:
+                        obstacleGrid[i][j] = obstacleGrid[i-1][j] + obstacleGrid[i][j-1] + 1
+                    else:
+                        obstacleGrid[i][j] = obstacleGrid[i-1][j] + obstacleGrid[i][j-1]
         print(obstacleGrid,"end")
         return obstacleGrid[-1][-1]
 #2018.11.22
@@ -45,7 +61,8 @@ class Solution:
 if __name__ == '__main__':
     # ls = [[0,0,0],[0,1,0],[0,0,0]]
     # ls = [[0,0],[1,1],[0,0]]
-    ls = [[0,0],[1,0]]
+    # ls = [[0,0],[1,0]]
+    ls = [[0,0],[0,1]]
     s = Solution()
     nums = s.uniquePathsWithObstacles(ls)
     print(nums)
