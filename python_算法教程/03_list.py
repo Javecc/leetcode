@@ -1,7 +1,4 @@
-# li = [12,"ab"]
-li = []
-li.append(12)
-li.appned("ab")
+li = [12,"ab"]
 print(li[0])
 print(li[1])
 print(type(li[0]))
