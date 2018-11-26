@@ -61,12 +61,12 @@ class SingleLinkList:
         """指定位置插入元素
         :param pos从0开始
         """ 
-        node = Node(item)
-        if pos == 0:
-            point = self.__head
-            self.__head = node
-            node.next = point
+        if pos <= 0:  #小于等于0头插法
+            self.add(item)
+        elif pos > self.length(): #大于长度尾插法
+            self.append(item)
         elif pos > 0 and pos < self.length():
+            node = Node(item)
             point = self.__head
             for i in range(pos-1):
                 point = point.next
@@ -79,8 +79,24 @@ class SingleLinkList:
             # temp = point
             # point = node
             # node.next = temp
-        else:
-            print("insert error!")
+
+    def search(self, item):
+        """查找结点是是否存在
+           存在打印True+坐标，否则打印False
+        """
+        point = self.__head
+        pos = 0
+        while pos < self.length():
+            if point.elem == item:
+                print("True {}".format(pos))
+                return 
+            else:
+                point = point.next
+            pos += 1
+        print("False")
+
+    def remove(self, item):
+        
 
 
 if __name__ == '__main__':
@@ -99,5 +115,6 @@ if __name__ == '__main__':
     ssl.add(7)
     ssl.add(8)
     ssl.travel()
-    ssl.insert(0,11)
+    ssl.insert(6,11)
     ssl.travel()
+    ssl.search(12)
