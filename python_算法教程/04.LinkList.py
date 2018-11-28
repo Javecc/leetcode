@@ -96,6 +96,7 @@ class SingleLinkList:
         print("False")
 
     def remove(self, item):
+        pass
         
 
 
