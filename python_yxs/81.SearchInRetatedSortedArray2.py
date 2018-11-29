@@ -11,10 +11,14 @@ class Solution:
         fir = 0
         end = length-1
         while fir <= end:
+            point = 0 #设置判断点
             mid = (fir+end)//2
+            for i in range(mid,end):  #确保后面是否有序
+                    if nums[i] > nums[i+1]:
+                        point = 1
             if nums[mid] == target:
                 return True
-            elif nums[mid] <= nums[end]: #表示后面为有序(可能重复)
+            elif nums[mid] <= nums[end] and point == 0: #表示后面为有序(可能重复)
                 if nums[mid] < target and target <= nums[end]:
                     fir = mid + 1
                 else:
@@ -29,9 +33,10 @@ class Solution:
 #2018.11.29
 #---------------main function----------------
 if __name__ == '__main__':
-    # l = [2,5,6,0,0,1,2]
+    l = [2,5,6,0,0,1,2]
     # l = [3,1,1]
-    l = [1,1,3,1]
+    # l = [1,1,1,2,3,1]
+    # l = [1,1,3,1]
     target = 3
     s = Solution()
     print(s.search(l,target))
